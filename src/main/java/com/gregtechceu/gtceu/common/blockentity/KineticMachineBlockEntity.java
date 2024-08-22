@@ -309,9 +309,7 @@ public class KineticMachineBlockEntity extends KineticBlockEntity implements IMa
     }
 
     @Override
-    public void onNeighborChanged(@NotNull Direction facing) {
-
-    }
+    public void onNeighborChanged(@NotNull Direction facing) {}
 
     @Override
     public void markAsDirty() {
