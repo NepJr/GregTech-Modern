@@ -196,7 +196,7 @@ public class ChargerMachine extends TieredEnergyMachine implements IControllable
         }
 
         @Override
-        public long acceptEnergyFromNetwork(@Nullable Direction side, long voltage, long amperage) {
+        public long acceptEnergyFromNetwork(@Nullable Direction side, long voltage, long amperage, boolean simulate) {
             var latestTimeStamp = getMachine().getOffsetTimer();
             if (lastTimeStamp < latestTimeStamp) {
                 amps = 0;
