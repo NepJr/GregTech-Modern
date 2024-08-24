@@ -112,13 +112,15 @@ public class MetaMachineBlockEntity extends NeighborCacheBlockEntity implements 
     }
 
     @Override
-    public boolean shouldRenderGrid(Player player, ItemStack held, Set<GTToolType> toolTypes) {
-        return metaMachine.shouldRenderGrid(player, held, toolTypes);
+    public boolean shouldRenderGrid(Player player, BlockPos pos, BlockState state, ItemStack held,
+                                    Set<GTToolType> toolTypes) {
+        return metaMachine.shouldRenderGrid(player, pos, state, held, toolTypes);
     }
 
     @Override
-    public ResourceTexture sideTips(Player player, Set<GTToolType> toolTypes, Direction side) {
-        return metaMachine.sideTips(player, toolTypes, side);
+    public ResourceTexture sideTips(Player player, BlockPos pos, BlockState state, Set<GTToolType> toolTypes,
+                                    Direction side) {
+        return metaMachine.sideTips(player, pos, state, toolTypes, side);
     }
 
     @Override
