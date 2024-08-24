@@ -255,9 +255,7 @@ public class MetaMachineBlock extends AppearanceBlock implements IMachineBlock {
                     machineLife.onMachineRemoved();
                 }
                 if (machine != null) {
-                    for (Direction direction : GTUtil.DIRECTIONS) {
-                        machine.getCoverContainer().removeCover(direction, null);
-                    }
+                    machine.getCoverContainer().dropAllCovers();
                 }
 
                 pLevel.updateNeighbourForOutputSignal(pPos, this);
@@ -341,6 +339,7 @@ public class MetaMachineBlock extends AppearanceBlock implements IMachineBlock {
         var machine = getMachine(level, pos);
         if (machine != null) {
             machine.onNeighborChanged(block, fromPos, isMoving);
+            machine.getCoverContainer().updateInputRedstoneSignals();
         }
         super.neighborChanged(state, level, pos, block, fromPos, isMoving);
     }
