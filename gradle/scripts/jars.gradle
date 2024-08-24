@@ -1,13 +1,13 @@
 apply plugin: "dev.architectury.loom"
 
 shadowJar {
-    exclude "fabric.mod.json"
-    exclude "architectury.common.json"
-
+    dependsOn shadowJar.configurations
     configurations = [project.configurations.shadow]
     archiveClassifier = "dev-shadow"
     minimize()
     relocate("org.jgrapht", "${maven_group}.repack.org.jgrapht")
+    relocate("org.jheaps", "${maven_group}.repack.org.jheaps")
+    relocate("org.apfloat", "${maven_group}.repack.org.apfloat")
 }
 
 remapJar {
@@ -17,6 +17,8 @@ remapJar {
 }
 
 jar {
+    exclude ".cache/*"
+
     archiveClassifier = "dev"
 }
 
