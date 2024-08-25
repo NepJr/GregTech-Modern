@@ -765,6 +765,7 @@ public class LangHandler {
         provider.add("behavior.portable_scanner.energy_container_storage", "Energy: %s EU / %s EU");
         provider.add("behavior.portable_scanner.eu_per_sec", "Average (last second): %s EU/t");
         provider.add("behavior.portable_scanner.amp_per_sec", "Average (last second): %s A");
+        provider.add("behavior.portable_scanner.temperature", "Temperature: %sK");
         provider.add("behavior.portable_scanner.machine_disabled", "Disabled.");
         provider.add("behavior.portable_scanner.machine_front_facing", "Front Facing: %s");
         provider.add("behavior.portable_scanner.machine_power_loss", "Shut down due to power loss.");
